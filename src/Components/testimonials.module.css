@@ -1,0 +1,125 @@
+.cont {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    max-height:fit-content ;
+    position: relative;
+}
+
+
+.infoCont {
+    width: 60%;
+    position: absolute;
+    z-index: 100;
+    left: 50px;
+    font-size: 32px;
+    background-image: url(./../assets/images/pattern-quotes.svg);
+    background-position: top left 50px;
+    background-repeat: no-repeat;
+}
+
+.info {
+    color: var(--dark-blue);
+    font-weight: medium;
+}
+.userInfo {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    
+}
+
+.name {
+    color: var(--dark-blue);
+    font-weight: bold;
+}
+.position {
+    margin: 0 0 0 10px;
+    color: var(--grayish-blue);
+
+}
+
+.imageCont {
+    width: 40%;
+    position: relative;
+    left: 27%;
+    box-shadow: 0px 0px 20px 10px #0004;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.imageCont:before {
+    position: absolute;
+    z-index: -1;
+    content: '';
+    background-image: url(../assets/images/pattern-bg.svg);
+    background-repeat:no-repeat;
+    background-size: 100%;
+    width:130%;
+    height: 130%;
+}
+
+.image {
+    width: 100%;
+    object-fit: cover;
+}
+.swicher {
+    position: absolute;
+    bottom: -10px;
+    left: 20px;
+    background:#fff;
+    width: 80px;
+    height: 40px;
+    border-radius: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    color:#555;
+    font-weight: bold;
+    z-index: 3000;
+    cursor: pointer;
+}
+.swicher::after{
+    position: absolute;
+    content: '';
+    height: 100%;
+    width: 2px;
+}
+
+
+@media screen and (max-width : 1000px) {
+    .cont {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 80%;
+        height: max-content;
+        position: absolute;
+        top: 100px;
+    }
+    
+    
+    .infoCont {
+        width: 100%;
+        position: relative;
+        left: 0px;
+        margin: 30px 0;
+        font-size: 1.3rem;
+        text-align: center;
+    }
+
+    .userInfo {
+        flex-direction: column;
+        
+    }
+    
+    .imageCont {
+        width: 90%;
+        position: relative;
+        left: 0;
+    }
+    .swicher { 
+        left: 35%;
+        bottom: -20px;
+    }
+}
