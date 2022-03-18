@@ -2,7 +2,8 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 80%;
+    width: 80%;  
+    margin: auto;  
     max-height:fit-content ;
     position: relative;
 }
@@ -40,16 +41,15 @@
 
 }
 
-.imageCont {
+.contImage {
     width: 40%;
     position: relative;
     left: 27%;
-    box-shadow: 0px 0px 20px 10px #0004;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.imageCont:before {
+.contImage:before {
     position: absolute;
     z-index: -1;
     content: '';
@@ -58,6 +58,11 @@
     background-size: 100%;
     width:130%;
     height: 130%;
+}
+.imageCont {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
 }
 
 .image {
@@ -69,16 +74,16 @@
     bottom: -10px;
     left: 20px;
     background:#fff;
-    width: 80px;
-    height: 40px;
+    width: 100px;
+    height: 50px;
     border-radius: 30px;
     display: flex;
     align-items: center;
     justify-content: space-around;
-    color:#555;
-    font-weight: bold;
     z-index: 3000;
     cursor: pointer;
+    overflow: hidden;
+    box-shadow: 0px 5px 10px 5px #7773;
 }
 .swicher::after{
     position: absolute;
@@ -87,12 +92,23 @@
     width: 2px;
 }
 
+.icon {
+    padding:10px;
+    font-size: 1.3rem;
+    transition: all .2s;
+    opacity: .7;
+    color: var(--dark-blue);
+}
+.icon:hover {
+    opacity: 1;
+}
+
 
 @media screen and (max-width : 1000px) {
     .cont {
         display: flex;
         flex-direction: column-reverse;
-        width: 80%;
+        width: 80%;    
         height: max-content;
         position: absolute;
         top: 100px;
@@ -104,7 +120,7 @@
         position: relative;
         left: 0px;
         margin: 30px 0;
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         text-align: center;
     }
 
@@ -113,13 +129,15 @@
         
     }
     
-    .imageCont {
-        width: 90%;
+    .contImage {
+        width: 100%;
         position: relative;
         left: 0;
     }
     .swicher { 
-        left: 35%;
+        left: 0;
+        right: 0;
+        margin: auto;
         bottom: -20px;
     }
 }

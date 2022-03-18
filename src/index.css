@@ -41,8 +41,10 @@ body {
 .App { 
   width: 100vw;
   min-height: 100vh;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
   background-image: url(assets/images/pattern-curve.svg);
   background-repeat: no-repeat;
   background-size: 100vh;
