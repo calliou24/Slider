@@ -20,17 +20,17 @@ const imageAnimation = {
 };
 
 const textAnimation = {
-    in: {
-      opacity: .2,
-    },
-    on: {
-      opacity: 1,
-    },
-    out: {
-      opacity: .2,
-      transition: { duration: 0.1 },
-    },
-  };
+  in: {
+    opacity: 0.2,
+  },
+  on: {
+    opacity: 1,
+  },
+  out: {
+    opacity: 0.2,
+    transition: { duration: 0.1 },
+  },
+};
 
 function Slider() {
   const [swicher, setSwicher] = useState(false);
@@ -46,14 +46,16 @@ function Slider() {
       <AnimatePresence exitBeforeEnter>
         {data.map((e) => (
           <div key={e.name} className={styles.cont}>
-            <div
-              className={styles.infoCont}
-            >
+            <div className={styles.infoCont}>
               <motion.p
-              initial="in"
-              animate="on"
-              exit="out"
-              variants={textAnimation} className={styles.info}>{e.content}</motion.p>
+                initial="in"
+                animate="on"
+                exit="out"
+                variants={textAnimation}
+                className={styles.info}
+              >
+                {e.content}
+              </motion.p>
               <span className={styles.userInfo}>
                 <p className={styles.name}>{e.name}</p>
                 <p className={styles.position}>{e.job}</p>
@@ -61,19 +63,27 @@ function Slider() {
             </div>
             <div className={styles.contImage}>
               <div className={styles.imageCont}>
-              <motion.img
-                initial="in"
-                animate="on"
-                exit="out"
-                variants={imageAnimation}
-                className={styles.image}
-                src={e.image}
-                alt={e.name}
-              />
+                <motion.img
+                  initial="in"
+                  animate="on"
+                  exit="out"
+                  variants={imageAnimation}
+                  className={styles.image}
+                  src={e.image}
+                  alt={e.name}
+                />
               </div>
               <div className={styles.swicher}>
-                <FontAwesomeIcon className={styles.icon} onClick={changeData} icon={faAngleLeft} />
-                <FontAwesomeIcon className={styles.icon} onClick={changeData} icon={faAngleRight} />
+                <FontAwesomeIcon
+                  className={styles.icon}
+                  onClick={changeData}
+                  icon={faAngleLeft}
+                />
+                <FontAwesomeIcon
+                  className={styles.icon}
+                  onClick={changeData}
+                  icon={faAngleRight}
+                />
               </div>
             </div>
           </div>
